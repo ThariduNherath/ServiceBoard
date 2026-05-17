@@ -3,16 +3,54 @@ const mongoose = require("mongoose");
 const Job = require("./src/models/JobRequest");
 
 const seeds = [
-  { title: "Leaking kitchen tap", description: "Dripping tap in kitchen, needs new washer.", category: "Plumbing",   location: "Glasgow",   contactName: "Alice Brown",  contactEmail: "alice@example.com" },
-  { title: "Rewire garage sockets", description: "Three sockets not working after fuse box upgrade.", category: "Electrical", location: "Edinburgh", contactName: "Bob Smith",   contactEmail: "bob@example.com" },
-  { title: "Paint living room",    description: "Two coats on ceiling and walls, approx 20 sqm.",   category: "Painting",   location: "London",    contactName: "Carol Davis", contactEmail: "carol@example.com" },
-  { title: "Fix garden fence",     description: "Three panels down after last storm.",               category: "Joinery",    location: "Manchester", contactName: "Dan Lee",    contactEmail: "dan@example.com" },
-  { title: "Boiler service",       description: "Annual boiler service due, Worcester combi.",      category: "Plumbing",   location: "Glasgow",   contactName: "Eve Wilson",  contactEmail: "eve@example.com" },
+  { 
+    title: "Leaking kitchen tap in Kandy", 
+    description: "The main tap in the kitchen is constantly dripping. Needs a washer replacement or new tap installation.", 
+    category: "Plumbing", 
+    location: "Kandy", 
+    contactName: "Nimal Perera", 
+    contactEmail: "nimal@example.com" 
+  },
+  { 
+    title: "Tripping trip switch & socket repair", 
+    description: "Living room plug sockets are not working. Main trip switch drops when turning on the TV.", 
+    category: "Electrical", 
+    location: "Colombo", 
+    contactName: "Sahan Silva", 
+    contactEmail: "sahan@example.com" 
+  },
+  { 
+    title: "Full house exterior painting", 
+    description: "Need to apply two coats of weather shield paint for a two-story house. Around 2500 sqft wall area.", 
+    category: "Painting", 
+    location: "Peradeniya", 
+    contactName: "Priyantha Bandara", 
+    contactEmail: "priyantha@example.com" 
+  },
+  { 
+    title: "Wooden pantry cupboard door repair", 
+    description: "Two hinges of the kitchen pantry doors are broken. Need a carpenter to replace them.", 
+    category: "Joinery", 
+    location: "Katugastota", 
+    contactName: "Anura Kumara", 
+    contactEmail: "anura@example.com" 
+  },
+  { 
+    title: "Bathroom commode leak & flush repair", 
+    description: "Water is leaking from the bottom of the commode and the flush mechanism is not working properly.", 
+    category: "Plumbing", 
+    location: "Kandy", 
+    contactName: "Ruwan Fernando", 
+    contactEmail: "ruwan@example.com" 
+  },
 ];
 
 mongoose.connect(process.env.MONGO_URI).then(async () => {
   await Job.deleteMany({});
   await Job.insertMany(seeds);
-  console.log("Seeded 5 jobs");
+  console.log("Successfully seeded 5 Sri Lankan jobs!");
   process.exit(0);
+}).catch(err => {
+  console.error("Error seeding data: ", err);
+  process.exit(1);
 });
