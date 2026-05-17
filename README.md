@@ -4,6 +4,16 @@ A full-stack Mini Service Request Board where homeowners can post service reques
 
 ---
 
+## Live Demo
+
+| | URL |
+|---|---|
+| 🌐 Frontend | https://service-board-next.vercel.app |
+| ⚙️ Backend API | https://serviceboard-production.up.railway.app/api/jobs|
+| 📦 GitHub | https://github.com/ThariduNherath/ServiceBoard |
+
+---
+
 ## Tech Stack
 
 | Layer | Technology |
@@ -85,7 +95,7 @@ NEXT_PUBLIC_API_URL=http://localhost:5000/api
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/globaltna-assessment.git
+git clone https://github.com/YOUR_USERNAME/globaltna-assessment.git
 cd globaltna-assessment
 ```
 
@@ -185,7 +195,7 @@ Base URL: `http://localhost:5000/api`
   contactName:  String
   contactEmail: String  // validated email format
   status:       String  // "Open" | "In Progress" | "Closed", default: "Open"
-  createdAt:    Date    // auto-set on create
+  createdAt:    Date    // auto set on create
 }
 ```
 
@@ -220,9 +230,9 @@ Base URL: `http://localhost:5000/api`
 ### Bonus (Optional)
 - [x] Keyword search across title and description (MongoDB text index)
 - [x] Seed script with 5 sample jobs (`node seed.js`)
+- [x] Deployed frontend to Vercel, backend to Railway
 - [ ] JWT-based authentication
 - [ ] Unit tests (Jest / Vitest)
-- [ ] Deployment to Vercel + Render
 
 ---
 
