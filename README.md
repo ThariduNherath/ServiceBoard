@@ -95,7 +95,7 @@ NEXT_PUBLIC_API_URL=http://localhost:5000/api
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/globaltna-assessment.git
+git clone https://github.com/ThariduNherath/ServiceBoard.git
 cd globaltna-assessment
 ```
 
