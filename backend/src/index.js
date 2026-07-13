@@ -9,7 +9,6 @@ app.use(cors());
 app.use(express.json());
 
 // ⚡ Vercel Serverless සඳහා Database එක Connect කිරීමේ සරල Middleware එකක්
-// මේකෙන් හැම request එකක්ම යද්දී DB එක connect වෙලාද කියලා බලනවා, නැත්නම් connect කරනවා.
 app.use(async (req, res, next) => {
   try {
     await connect();
@@ -17,6 +16,14 @@ app.use(async (req, res, next) => {
   } catch (err) {
     next(err);
   }
+});
+
+// 👈 මෙන්න මේක අලුතින් එකතු කරා
+app.get("/", (req, res) => {
+  res.json({ 
+    status: "success", 
+    message: "GlobalTNA Backend API is running successfully on Vercel!" 
+  });
 });
 
 app.use("/api/jobs", jobRoutes);
